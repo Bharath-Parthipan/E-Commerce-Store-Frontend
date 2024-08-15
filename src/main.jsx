@@ -15,6 +15,7 @@ import Register from "./Pages/Auth/Register.jsx";
 import Profile from "./Pages/Users/Profile.jsx";
 import AdminRoute from "./Pages/Admin/AdminRoute.jsx";
 import UserList from "./Pages/Admin/UserList.jsx";
+import CategoryList from "./Pages/Admin/CategoryList.jsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -30,6 +31,7 @@ const router = createBrowserRouter(
       {/* Admin Route */}
       <Route path="/admin" element={<AdminRoute />}>
         <Route path="userlist" element={<UserList />} />
+        <Route path="categorylist" element={<CategoryList />} />
       </Route>
     </Route>
   )
