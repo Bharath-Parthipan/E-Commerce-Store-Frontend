@@ -11,9 +11,9 @@ const AdminMenu = () => {
       <button className={`${isMenuOpen ? "top-2 right-2" : "top-5 right-7"} bg-[#1A237E] p-2 fixed rounded-lg`} onClick={toggleMenu}>
         {isMenuOpen ? ( <FaTimes color="white" /> ) : (
           <>
-            <div className="w-6 h-0.5 bg-gray-200 my-1"></div>
-            <div className="w-6 h-0.5 bg-gray-200 my-1"></div>
-            <div className="w-6 h-0.5 bg-gray-200 my-1"></div>
+            <div className="w-6 h-0.5 bg-white my-1"></div>
+            <div className="w-6 h-0.5 bg-white my-1"></div>
+            <div className="w-6 h-0.5 bg-white my-1"></div>
           </>
         )}
       </button>
