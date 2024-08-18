@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { saveShippingAddress, savePaymentMethod } from "../../Redux/features/cart/cartSlice";
-import ProgressSteps from "../../components/ProgressSteps";
+import ProgressSteps from "../../Components/ProgressSteps";
 
 const Shipping = () => {
   const cart = useSelector((state) => state.cart);
