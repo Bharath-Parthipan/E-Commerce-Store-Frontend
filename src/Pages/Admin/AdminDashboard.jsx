@@ -1,5 +1,5 @@
 import Chart from "react-apexcharts";
-import { useGetUsersQuery } from "../../redux/api/usersApiSlice";
+import { useGetUsersQuery } from "../../Redux/api/usersApiSlice";
 import { useGetTotalOrdersQuery, useGetTotalSalesByDateQuery, useGetTotalSalesQuery } from "../../Redux/api/orderApiSlice";
 import { useState, useEffect } from "react";
 import AdminMenu from "./AdminMenu";

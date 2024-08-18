@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { FaTrash, FaEdit, FaCheck, FaTimes } from "react-icons/fa";
 import Message from "../../Components/Message";
 import Loader from "../../Components/Loader";
-import { useGetUsersQuery, useDeleteUserMutation, useUpdateUserMutation } from "../../redux/api/usersApiSlice";
+import { useGetUsersQuery, useDeleteUserMutation, useUpdateUserMutation } from "../../Redux/api/usersApiSlice";
 import { toast } from "react-toastify";
 const UserList = () => {
   const { data: users, refetch, isLoading, error } = useGetUsersQuery();
