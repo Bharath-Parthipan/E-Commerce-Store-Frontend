@@ -54,19 +54,19 @@ const PlaceOrder = () => {
             <table className="w-full border border-gray-400">
               <thead className="bg-indigo-900 text-white">
                 <tr>
-                  <th className="border text-center border-gray-400 px-1 py-2 text-left align-top">
+                  <th className="border text-center border-gray-400 px-1 py-2 align-top">
                     Image
                   </th>
-                  <th className="border text-center border-gray-400 px-1 py-2 text-left">
+                  <th className="border text-center border-gray-400 px-1 py-2">
                     Product
                   </th>
-                  <th className="border text-center border-gray-400 px-1 py-2 text-left">
+                  <th className="border text-center border-gray-400 px-1 py-2">
                     Quantity
                   </th>
-                  <th className="border text-center border-gray-400 px-1 py-2 text-left">
+                  <th className="border text-center border-gray-400 px-1 py-2">
                     Price
                   </th>
-                  <th className="border text-center border-gray-400 px-1 py-2 text-left">
+                  <th className="border text-center border-gray-400 px-1 py-2">
                     Total
                   </th>
                 </tr>
