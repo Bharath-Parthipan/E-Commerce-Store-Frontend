@@ -13,14 +13,18 @@ import {
 } from "react-icons/fa";
 import { useEffect } from "react";
 
-
 const ProductCarousel = () => {
-  const { data: products, refetch, isLoading, error } = useGetTopProductsQuery();
+  const {
+    data: products,
+    refetch,
+    isLoading,
+    error,
+  } = useGetTopProductsQuery();
   const base_url = "data:image/jpeg;base64,";
-    
+
   useEffect(() => {
-      refetch();
-  }, [refetch])
+    refetch();
+  }, [refetch]);
 
   const settings = {
     dots: false,
@@ -36,9 +40,14 @@ const ProductCarousel = () => {
   return (
     <div className="mb-4 lg:block xl:block md:block">
       {isLoading ? null : error ? (
-        <Message variant="danger">{error?.data?.message || error.error}</Message>
+        <Message variant="danger">
+          {error?.data?.message || error.error}
+        </Message>
       ) : (
-        <Slider {...settings} className="xl:w-[45rem]  lg:w-[50rem] md:w-[56rem] sm:w-[40rem] sm:block">
+        <Slider
+          {...settings}
+          className="xl:w-[45rem]  lg:w-[50rem] md:w-[56rem] sm:w-[40rem] sm:block"
+        >
           {products.map(
             ({
               image,
@@ -54,11 +63,15 @@ const ProductCarousel = () => {
               countInStock,
             }) => (
               <div key={_id}>
-                <img src={base_url+image} alt={name} className="w-full rounded-lg object-cover h-[30rem]" />
+                <img
+                  src={base_url + image}
+                  alt={name}
+                  className="w-full rounded-lg object-cover h-[30rem]"
+                />
                 <div className="mt-4 flex justify-between">
                   <div className="one">
                     <h2>{name}</h2>
-                    <p> Rs {price}</p> <br /> <br />
+                    <p> $ {price}</p> <br /> <br />
                     <p className="w-[25rem]">
                       {description.substring(0, 170)} ...
                     </p>
@@ -85,12 +98,10 @@ const ProductCarousel = () => {
                         {Math.round(rating)}
                       </h1>
                       <h1 className="flex items-center mb-6">
-                        <FaShoppingCart className="mr-2" /> Quantity:{" "}
-                        {quantity}
+                        <FaShoppingCart className="mr-2" /> Quantity: {quantity}
                       </h1>
                       <h1 className="flex items-center mb-6">
-                        <FaBox className="mr-2" /> In Stock:{" "}
-                        {countInStock}
+                        <FaBox className="mr-2" /> In Stock: {countInStock}
                       </h1>
                     </div>
                   </div>

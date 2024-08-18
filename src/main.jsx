@@ -4,6 +4,7 @@ import "./index.css";
 import { Route, RouterProvider, createRoutesFromElements } from "react-router";
 import { createBrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
+import { PayPalScriptProvider } from "@paypal/react-paypal-js";
 import store from "./Redux/store.js";
 
 // Private Route
@@ -24,6 +25,11 @@ import Favorites from "./Pages/Products/Favorites.jsx";
 import ProductDetails from "./Pages/Products/ProductDetails.jsx";
 import Cart from "./Pages/Card.jsx";
 import Shop from "./Pages/Shop.jsx";
+import Shipping from "./Pages/Orders/Shipping.jsx";
+import PlaceOrder from "./Pages/Orders/PlaceOrder.jsx";
+import Order from "./Pages/Orders/Order.jsx";
+import UserOrder from "./Pages/Users/UserOrder.jsx";
+import OrderList from "./Pages/Admin/OrderList.jsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -35,9 +41,13 @@ const router = createBrowserRouter(
       <Route path="/product/:id" element={<ProductDetails />} />
       <Route path="/cart" element={<Cart />} />
       <Route path="/shop" element={<Shop />} />
+      <Route path="/user-orders" element={<UserOrder />} />
 
       <Route path="" element={<PrivateRoute />}>
         <Route path="/profile" element={<Profile />} />
+        <Route path="/shipping" element={<Shipping />} />
+        <Route path="/placeorder" element={<PlaceOrder />} />
+        <Route path="/order/:id" element={<Order />} />
       </Route>
 
       {/* Admin Route */}
@@ -48,6 +58,7 @@ const router = createBrowserRouter(
         <Route path="allproductslist" element={<AllProducts />} />
         <Route path="productlist/:pagenumber" element={<ProductList />} />
         <Route path="product/update/:_id" element={<ProductUpdate />} />
+        <Route path="orderlist" element={<OrderList />} />
       </Route>
     </Route>
   )
@@ -55,6 +66,8 @@ const router = createBrowserRouter(
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <Provider store={store}>
-    <RouterProvider  router={router} />
+    <PayPalScriptProvider>
+      <RouterProvider router={router} />
+    </PayPalScriptProvider>
   </Provider>
 );
