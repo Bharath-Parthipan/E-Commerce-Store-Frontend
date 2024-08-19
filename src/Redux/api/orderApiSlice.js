@@ -8,6 +8,7 @@ export const orderApiSlice = apiSlice.injectEndpoints({
         url: ORDERS_URL,
         method: "POST",
         body: order,
+        credentials: "include",
       }),
     }),
 
@@ -22,6 +23,7 @@ export const orderApiSlice = apiSlice.injectEndpoints({
         url: `${ORDERS_URL}/${orderId}/pay`,
         method: "PUT",
         body: details,
+        credentials: "include",
       }),
     }),
 
@@ -48,6 +50,7 @@ export const orderApiSlice = apiSlice.injectEndpoints({
       query: (orderId) => ({
         url: `${ORDERS_URL}/${orderId}/deliver`,
         method: "PUT",
+        credentials: "include",
       }),
     }),
 
