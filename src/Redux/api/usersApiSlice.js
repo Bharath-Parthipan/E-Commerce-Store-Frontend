@@ -37,6 +37,7 @@ export const userApiSlice = apiSlice.injectEndpoints({
     getUsers: builder.query({
       query: () => ({
         url: USERS_URL,
+        credentials: "include",
       }),
       providesTags: ["User"],
       keepUnusedDataFor: 5,
@@ -51,6 +52,7 @@ export const userApiSlice = apiSlice.injectEndpoints({
     getUserDetails: builder.query({
       query: (id) => ({
         url: `${USERS_URL}/${id}`,
+        credentials: "include",
       }),
       keepUnusedDataFor: 5,
     }),

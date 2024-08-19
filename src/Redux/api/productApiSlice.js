@@ -7,25 +7,33 @@ export const productApiSlice = apiSlice.injectEndpoints({
       query: ({ keyword }) => ({
         url: `${PRODUCT_URL}`,
         params: { keyword },
+        credentials: "include",
       }),
       keepUnusedDataFor: 5,
       providesTags: ["Products"],
     }),
 
     getProductById: builder.query({
-      query: (productId) => `${PRODUCT_URL}/${productId}`,
+      query: (productId) => ({
+        url: `${PRODUCT_URL}/${productId}`,
+        credentials: "include",
+      }),
       providesTags: (result, error, productId) => [
         { type: "Product", id: productId },
       ],
     }),
 
     allProducts: builder.query({
-      query: () => `${PRODUCT_URL}/allProducts`,
+      query: () => ({
+        url: `${PRODUCT_URL}/allProducts`,
+        credentials: "include",
+      }),
     }),
 
     getProductDetails: builder.query({
       query: (productId) => ({
         url: `${PRODUCT_URL}/${productId}`,
+        credentials: "include",
       }),
       keepUnusedDataFor: 5,
     }),
@@ -77,12 +85,18 @@ export const productApiSlice = apiSlice.injectEndpoints({
     }),
 
     getTopProducts: builder.query({
-      query: () => `${PRODUCT_URL}/top`,
+        query: () => ({
+            url: `${PRODUCT_URL}/top`,
+            credentials: "include"
+        }),
       keepUnusedDataFor: 5,
     }),
 
     getNewProducts: builder.query({
-      query: () => `${PRODUCT_URL}/new`,
+        query: () => ({
+            url: `${PRODUCT_URL}/new`,
+            credentials: "include"
+        }),
       keepUnusedDataFor: 5,
     }),
 
