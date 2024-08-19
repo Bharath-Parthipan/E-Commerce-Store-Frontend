@@ -7,7 +7,6 @@ export const productApiSlice = apiSlice.injectEndpoints({
       query: ({ keyword }) => ({
         url: `${PRODUCT_URL}`,
         params: { keyword },
-        credentials: "include",
       }),
       keepUnusedDataFor: 5,
       providesTags: ["Products"],
@@ -16,7 +15,6 @@ export const productApiSlice = apiSlice.injectEndpoints({
     getProductById: builder.query({
       query: (productId) => ({
         url: `${PRODUCT_URL}/${productId}`,
-        credentials: "include",
       }),
       providesTags: (result, error, productId) => [
         { type: "Product", id: productId },
@@ -26,14 +24,12 @@ export const productApiSlice = apiSlice.injectEndpoints({
     allProducts: builder.query({
       query: () => ({
         url: `${PRODUCT_URL}/allProducts`,
-        credentials: "include",
       }),
     }),
 
     getProductDetails: builder.query({
       query: (productId) => ({
         url: `${PRODUCT_URL}/${productId}`,
-        credentials: "include",
       }),
       keepUnusedDataFor: 5,
     }),
@@ -43,7 +39,6 @@ export const productApiSlice = apiSlice.injectEndpoints({
         url: `${PRODUCT_URL}`,
         method: "POST",
         body: productData,
-        credentials: "include",
       }),
       invalidatesTags: ["Product"],
     }),
@@ -53,7 +48,6 @@ export const productApiSlice = apiSlice.injectEndpoints({
         url: `${PRODUCT_URL}/${productId}`,
         method: "PUT",
         body: formData,
-        credentials: "include",
       }),
     }),
 
@@ -62,7 +56,6 @@ export const productApiSlice = apiSlice.injectEndpoints({
         url: `${UPLOAD_URL}`,
         method: "POST",
         body: data,
-        credentials: "include",
       }),
     }),
 
@@ -70,7 +63,6 @@ export const productApiSlice = apiSlice.injectEndpoints({
       query: (productId) => ({
         url: `${PRODUCT_URL}/${productId}`,
         method: "DELETE",
-        credentials: "include",
       }),
       providesTags: ["Product"],
     }),
@@ -80,14 +72,12 @@ export const productApiSlice = apiSlice.injectEndpoints({
         url: `${PRODUCT_URL}/${data.productId}/reviews`,
         method: "POST",
         body: data,
-        credentials: "include",
       }),
     }),
 
     getTopProducts: builder.query({
         query: () => ({
             url: `${PRODUCT_URL}/top`,
-            credentials: "include"
         }),
       keepUnusedDataFor: 5,
     }),
@@ -95,7 +85,6 @@ export const productApiSlice = apiSlice.injectEndpoints({
     getNewProducts: builder.query({
         query: () => ({
             url: `${PRODUCT_URL}/new`,
-            credentials: "include"
         }),
       keepUnusedDataFor: 5,
     }),
@@ -105,7 +94,6 @@ export const productApiSlice = apiSlice.injectEndpoints({
         url: `${PRODUCT_URL}/filtered-products`,
         method: "POST",
         body: { checked, radio },
-        credentials: "include",
       }),
     }),
   }),
