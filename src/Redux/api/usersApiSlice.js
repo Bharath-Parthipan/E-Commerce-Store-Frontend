@@ -30,8 +30,8 @@ export const userApiSlice = apiSlice.injectEndpoints({
       query: (data) => ({
         url: `${USERS_URL}/profile`,
         method: "PUT",
-        body: data,
         credentials: "include",
+        body: data,
       }),
     }),
     getUsers: builder.query({
