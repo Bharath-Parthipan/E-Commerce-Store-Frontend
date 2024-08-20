@@ -44,20 +44,20 @@ const logoutHandler = async () => {
 return (
   <div style={{ zIndex: 9999 }} className={`${showSidebar ? "hidden" : "flex"} xl:flex lg:flex md:hidden sm:hidden flex-col justify-between p-4 text-white bg-[#1A237E] w-[4%] hover:w-[15%] h-[100vh]  fixed `} id="navigation-container" >
     <div className="flex flex-col justify-center space-y-4">
-      <Link to="/" className="flex items-center transition-transform transform hover:translate-x-2" >
-        <AiOutlineHome className="mr-2 mt-[3rem]" size={26} />
-        <span className="hidden nav-item-name mt-[3rem]">HOME</span>{" "}
+      <Link to="/" className="flex justify-center transition-transform transform hover:translate-x-2" >
+        <AiOutlineHome className="mt-[3rem]" size={26} />
+        <span className="hidden ml-2 nav-item-name mt-[3rem]">HOME</span>{" "}
       </Link>
 
       <Link to="/shop" className="flex items-center transition-transform transform hover:translate-x-2" >
-        <AiOutlineShopping className="mr-2 mt-[3rem]" size={26} />
-        <span className="hidden nav-item-name mt-[3rem]">SHOP</span>{" "}
+        <AiOutlineShopping className="mt-[3rem]" size={26} />
+        <span className="hidden nav-item-name ml-2 mt-[3rem]">SHOP</span>{" "}
       </Link>
 
       <Link to="/cart" className="flex relative">
         <div className="flex items-center transition-transform transform hover:translate-x-2">
-          <AiOutlineShoppingCart className="mt-[3rem] mr-2" size={26} />
-          <span className="hidden nav-item-name mt-[3rem]">Cart</span>{" "}
+          <AiOutlineShoppingCart className="mt-[3rem]" size={26} />
+          <span className="hidden nav-item-name ml-2 mt-[3rem]">Cart</span>{" "}
         </div>
 
         <div className="absolute top-9">
@@ -72,9 +72,9 @@ return (
       </Link>
 
       <Link to="/favorite" className="flex relative">
-        <div className="flex justify-center items-center transition-transform transform hover:translate-x-2">
-          <FaHeart className="mt-[3rem] mr-2" size={20} />
-          <span className="hidden nav-item-name mt-[3rem]">Favorites</span>{" "}
+        <div className="flex items-center transition-transform transform hover:translate-x-2">
+          <FaHeart className="mt-[3rem]" size={20} />
+          <span className="hidden nav-item-name ml-2 mt-[3rem]">Favorites</span>{" "}
           <FavoritesCount />
         </div>
       </Link>
